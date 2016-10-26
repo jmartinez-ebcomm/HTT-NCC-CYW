@@ -1,0 +1,280 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+/* Portrait layout (default) */
+.app {
+    position:absolute;
+    left:50%;
+    top:25%;
+    width:225px;
+    text-align:center;
+    margin:-115px 0px 10px -112px;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+  .app {
+    margin: -25px 0px 20px -250px;
+    width: 522px;
+    top: 18%;
+  }
+
+  .img-responsive {
+    display: inline-block !important;
+    max-width: 40% !important;
+    float: left;
+  }
+
+  .loading {
+    margin: 5px 0 49px 0  !important;
+    top: 24px !important;
+    left: 0%  !important;
+    display: inline-block;
+  }
+
+  #status {
+    margin-top: 14px;
+  }
+
+  .event {
+    padding: 6px 15px !important;
+    display: inline-block;
+    letter-spacing: 2px;
+  }
+
+  #messages {
+    height: 50px !important;
+    margin-bottom: 5px !important;
+    margin-top: 5px;
+  }
+
+  .nav_buttons {
+    display: inline-block;
+  }
+
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+/*------------- Status -------------*/
+
+#status p{
+  font-weight: bold;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-size: 15px;
+    margin: 5px 30px;
+    font-weight: bold;
+    padding: 6px 2px;
+    letter-spacing: 2px;
+}
+
+.event.success {background-color:#10bb33;}
+.event.info {background-color:#2378c8;}
+.event.warning {background-color:#f0ae00;}
+.event.error {background-color:#F00000;}
+
+
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+/* Animacion para los status */
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/* Desaparecer elementos */
+.hide {
+    display: none;
+}
+
+/* imagenes responsivas */
+.img-responsive{
+  display: block;
+  max-width: 100%;
+}
+
+
+/*------------- loading -------------*/
+.loading{
+  width: 50px;
+  position: relative;
+  margin: 5px 0 70px 0;
+  top: 25px;
+  left: 40%;
+}
+
+.loading-icon:after, .loading-icon:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35%;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  border: 5px solid transparent;
+  border-bottom: 5px solid #000;
+  border-radius: 100%;
+  -webkit-animation: rotate 1s linear infinite;
+  animation: rotate 1s linear infinite;
+}
+
+.loading-icon:before {
+  width: 40px;
+  height: 40px;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#messages{
+  font-weight: bold;
+  height: 100px;
+  overflow: auto;
+  margin-bottom: 25px;
+}
+
+/*------------- Botones -------------*/
+
+.nav_buttons {
+  margin-top: 10px;
+}
+
+.nav_buttons button {
+    display: inline-block;
+}
+
+.nav_buttons p{
+  font-size: 13px;
+}
+
+.btn{
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:#fff;
+}
+
+.btn{
+  outline: none;
+}
+
+.btn-default{
+    background: #d2d2d2;
+    color: #464646;
+    box-shadow: #828282 0px 5px 0px;
+}
+
+.btn-default:focus {
+    box-shadow: #828282 0px 3px 0px;
+    background: #b9b9b9;
+}
+
+.btn-info{
+  background: #2378C8;
+  box-shadow: #1b5e9d 0px 5px 0px;
+}
+
+.btn-info:focus {
+    box-shadow: #0a447b 0px 3px 0px;
+    background: #1262ad;
+}
+
+.btn-success{
+  	background: #10bb33;
+    box-shadow: #0b9427 0px 5px 0px;
+}
+
+.btn-success:focus {
+    box-shadow: #035815 0px 3px 0px;
+    background: #0b9427;
+}
+
+.btn-warning{
+    background: #f0ae00;
+    box-shadow: #c79101 0px 5px 0px;
+}
+
+.btn-warning:focus {
+    box-shadow: #8a6400 0px 3px 0px;
+    background: #c79101;
+}
+
+.btn-error{
+    background: #F00000;
+    box-shadow: #b70000 0px 5px 0px;
+}
+
+.btn-error:focus {
+    box-shadow: #840000 0px 3px 0px;
+    background: #b70000;
+}
