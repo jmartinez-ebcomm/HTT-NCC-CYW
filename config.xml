@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ebcomm.clickbyimpuls"
 	version="1.0.1"
-	android-versionCode="1001"
+	android-versionCode="10001"
 	ios-CFBundleVersion="1.1.2"
 	defaultlocale="es-419"
 	xmlns="http://www.w3.org/ns/widgets"
