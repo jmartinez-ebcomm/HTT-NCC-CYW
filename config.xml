@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.ebcomm.clickbyimpuls"
-	version="1.0.1"
-	android-versionCode="10001"
-	ios-CFBundleVersion="1.1.2"
+<widget id="com.ebcomm.clicbyimpuls"
+	version="1.0.3"
+	android-versionCode="1003"
+	ios-CFBundleVersion="1.1.3"
 	defaultlocale="es-419"
 	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
 	xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>ClickByImpuls</name>
+    <name>ClicByImpuls</name>
     <description>
         Contamos con una experiencia de más de 40 años en la industria del calzado en México, la cual nos permite mantener una alianza con nuestros proveedores para ofercerte calidad y moda a precios muy competitivos.
     </description>
