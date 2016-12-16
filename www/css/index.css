@@ -1,3 +1,4 @@
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -16,74 +17,83 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-body {
-    -webkit-touch-callout: none;
-    -webkit-text-size-adjust: none;
-    -webkit-user-select: none;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    background: url('../img/background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    text-transform: uppercase;
+body{ 
+  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  font-family: 'Heebo', sans-serif;
+  background: url('../img/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
 }
 
 /* Portrait layout (default) */
 .app {
-    position:absolute;
+    background:url(../img/icon.png) no-repeat center top; /* 170px x 200px */
+    background-size: 100%;
+    position:absolute;             /* position in the center of the screen */
     left:50%;
-    top:25%;
-    width:225px;
+    top:30%;
+    height: auto;                   /* text area height */
+    width:225px;                   /* text area width */
     text-align:center;
-    margin:-115px 0px 10px -112px;
+    padding:235px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-125px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+} 
+
+/*
+#error_page.app{
+  padding: 170px 0px 0px 0px;
 }
+*/
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-  .app {
-    margin: -25px 0px 20px -250px;
-    width: 522px;
-    top: 18%;
-  }
+    .app {
+        background-position:left center;
+        background-size: 50%;
+            padding: 67px 0px 75px 242px !important;
+    margin: -140px 0px 0px -215px !important;
+        height: auto;                                   
+    }
+  
+/*
+    #error_page.app{
+      height:205px;
+      padding:75px 0px 75px 133px !important;  /* padding-top + padding-bottom + text area = image height */
+      margin:-137px 0px 0px -210px !important;
+    }
+*/
 
-  .img-responsive {
-    display: inline-block !important;
-    max-width: 40% !important;
-    float: left;
-  }
+    .aviso_x { 
+        right: 0 !important;
+        left: 50px;
+        bottom: 25px;
+        top: 0 !important;
+    }
 
-  .loading {
-    margin: 5px 0 49px 0  !important;
-    top: 24px !important;
-    left: 0%  !important;
-    display: inline-block;
-  }
+    .spinner:after, .spinner:before {
+        left: 40% !important;
+        top: 0 !important;
+        bottom: 20% !important;
+    }
 
-  #status {
-    margin-top: 14px;
-  }
+    #index_page .nav_buttons {
+        left: 35% !important;
+    }
+}
 
-  .event {
-    padding: 6px 15px !important;
-    display: inline-block;
-    letter-spacing: 2px;
-  }
-
-  #messages {
-    height: 50px !important;
-    margin-bottom: 5px !important;
-    margin-top: 5px;
-  }
-
-  .nav_buttons {
-    display: inline-block;
-  }
-
+/* medidas del loader */
+.loader{
+    width: 30%; 
 }
 
 h1 {
@@ -95,30 +105,33 @@ h1 {
     text-align:center;
 }
 
-/*------------- Status -------------*/
-
-#status p{
-  font-weight: bold;
-}
-
+/* ----- stylos de los eventos ----- */
+  /*style base*/
 .event {
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    color: #FFFFFF;
-    background-color: #000000;
+    background: #fff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    color: #717171;
     font-size: 15px;
-    margin: 5px 30px;
-    font-weight: bold;
+    margin: 10px 30px 5px;
+    border: 1px solid #fff;
     padding: 6px 2px;
+    position: relative;
     letter-spacing: 2px;
 }
-
-.event.success {background-color:#10bb33;}
-.event.info {background-color:#2378c8;}
-.event.warning {background-color:#f0ae00;}
-.event.error {background-color:#F00000;}
-
-
+  /*style error*/
+.event.error {
+    border: none;
+    color: #fff;
+    background: #F00000;
+}
+ /*style correcto*/
+.event.received {
+    color: #ffffff;
+    background: #4cd964;
+    border: none; 
+    margin-top: 50px;
+} 
 
 @keyframes fade {
     from { opacity: 1.0; }
@@ -131,150 +144,87 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
-
-/* Animacion para los status */
+/*clase para animar el evento */
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
-
-/* Desaparecer elementos */
+/*desaparecer elemento*/
 .hide {
     display: none;
 }
+ 
+/* ----- Stilos de los botones ----- */
 
-/* imagenes responsivas */
-.img-responsive{
-  display: block;
-  max-width: 100%;
-}
-
-
-/*------------- loading -------------*/
-.loading{
-  width: 50px;
-  position: relative;
-  margin: 5px 0 70px 0;
-  top: 25px;
-  left: 40%;
-}
-
-.loading-icon:after, .loading-icon:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 35%;
-  bottom: 0;
-  margin: auto;
-  width: 30px;
-  height: 30px;
-  border: 5px solid transparent;
-  border-bottom: 5px solid #000;
-  border-radius: 100%;
-  -webkit-animation: rotate 1s linear infinite;
-  animation: rotate 1s linear infinite;
-}
-
-.loading-icon:before {
-  width: 40px;
-  height: 40px;
-  -webkit-animation-direction: reverse;
-  animation-direction: reverse;
-}
-
-@keyframes rotate {
-  from {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-#messages{
-  font-weight: bold;
-  height: 100px;
-  overflow: auto;
-  margin-bottom: 25px;
-}
-
-/*------------- Botones -------------*/
-
-.nav_buttons {
-  margin-top: 10px;
+.nav_buttons div button {
+    height: 40px;
+    padding-top: 10px;
 }
 
 .nav_buttons button {
-    display: inline-block;
+    padding: 10px 15px;
+    display: inline-block; 
+}
+
+.nav_buttons #back, .nav_buttons #continue{
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 17px;
+}
+    /* botones rojo: regresar */
+.nav_buttons #back{
+    background: #ff3b30;
+    border: 1px solid #ff3b30;
+}
+    /* boton azul: adelante */
+.nav_buttons #continue {
+    background: #4cd964;
+    border: 1px solid #4cd964;
+}
+    /* focus: botones*/
+.nav_buttons #back:focus, .nav_buttons #continue:focus {
+    opacity: 0.6;
+    outline: none;
 }
 
 .nav_buttons p{
   font-size: 13px;
 }
 
-.btn{
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color:#fff;
+#index_page .nav_buttons{
+  /*position: absolute;
+  bottom: -30px;
+  left: 25%;*/
+  color: #fff;
 }
 
-.btn{
-  outline: none;
+/* ----- Stilo de cuadro de aviso 
+.aviso_x{
+    width: 100%;
+    background: rgba(255,255,255,.7);
+    height: auto;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 18px;
+    position: relative;
+    right: 17px;
+    top: 60px;
+}
+----- */
+
+.aviso_x {
+    background: rgba(255,255,255,.7);
+    height: auto;
+    overflow: hidden;
+    border-radius: 21px;
+    padding: 18px;
+    margin-top: 20px;
 }
 
-.btn-default{
-    background: #d2d2d2;
-    color: #464646;
-    box-shadow: #828282 0px 5px 0px;
-}
-
-.btn-default:focus {
-    box-shadow: #828282 0px 3px 0px;
-    background: #b9b9b9;
-}
-
-.btn-info{
-  background: #2378C8;
-  box-shadow: #1b5e9d 0px 5px 0px;
-}
-
-.btn-info:focus {
-    box-shadow: #0a447b 0px 3px 0px;
-    background: #1262ad;
-}
-
-.btn-success{
-  	background: #10bb33;
-    box-shadow: #0b9427 0px 5px 0px;
-}
-
-.btn-success:focus {
-    box-shadow: #035815 0px 3px 0px;
-    background: #0b9427;
-}
-
-.btn-warning{
-    background: #f0ae00;
-    box-shadow: #c79101 0px 5px 0px;
-}
-
-.btn-warning:focus {
-    box-shadow: #8a6400 0px 3px 0px;
-    background: #c79101;
-}
-
-.btn-error{
-    background: #F00000;
-    box-shadow: #b70000 0px 5px 0px;
-}
-
-.btn-error:focus {
-    box-shadow: #840000 0px 3px 0px;
-    background: #b70000;
+#descrip_aviso{
+  font-weight: bold;
+  height: 80px;
+  overflow: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(223,26,83,0.5);
 }

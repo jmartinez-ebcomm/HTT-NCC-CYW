@@ -3,10 +3,10 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: gap: https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *">
-
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Heebo:300,500,700,800" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title></title>
     </head>
@@ -15,30 +15,58 @@
         <div id="index_page" class="app">
 
             <!-- Logotipo -->
+            <!--
             <img src="img/icon.png" class="img-responsive"></img>
+            -->
+            <img src="css/default.gif" class="loader">
 
             <!-- loading -->
+            <!--
             <div class="loading">
                  <div class="loading-icon"></div>
             </div>
-
-            <!-- Status -->
-            <div id="status" class="blink">
-                <!-- info success warning error -->
-                <p class="event">Cargando...</p>
+            -->
+            <div id="loading" class="blink">
+                <p id="statusText" class="event listening">Cargando...</p>
+		<!--
+                <p id="loading_next" class="event received hide">Listo</p>
+		-->
             </div>
 
+            <!-- Status -->
+            <!--
+            <div id="status" class="blink">
+                -- info success warning error --
+                <p class="event">Cargando...</p>
+            </div>
+            -->
+
             <!-- Mensajes en general -->
+            <!--
             <div id="messages" class="hide">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
+            -->
+            <div id="messages" class="aviso_x hide">
+                <div id="descrip_aviso">
+                  <p>Se ha perdido la conexion a Internet. Intente de nuevo.</p>
+                </div>
+            </div>
 
             <!-- Botones -->
+            <!--
             <div class="nav_buttons hide">
                 <p>Seleccione una opci&oacute;n</p>
                 <button id="back" class="btn btn-default hide">Regresar</button>
                 <button id="continue" class="btn btn-info hide">Continuar</button>
             </div>
+            -->
+            <div class="nav_buttons hide">
+                <p>Seleccione una opci&oacute;n</p>
+                <button id="back" class="hide">Regresar</button>
+                <button id="continue" class="hide">Continuar</button>
+            </div>
+
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
