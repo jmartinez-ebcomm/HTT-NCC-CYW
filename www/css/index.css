@@ -1,24 +1,4 @@
 
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
-
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -47,37 +27,29 @@ body{
     text-align:center;
     padding:235px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-125px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-} 
-
-/*
-#error_page.app{
-  padding: 170px 0px 0px 0px;
 }
-*/
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
-        background-position:left center;
+        background-position: left center;
         background-size: 50%;
-            padding: 67px 0px 75px 242px !important;
-    margin: -140px 0px 0px -215px !important;
+/*
+        padding: 67px 0px 75px 242px !important;
+        margin: -140px 0px 0px -215px !important;
+*/
+        padding: 86px 0px 75px 218px !important;
+        margin: -179px 0px 0px -227px !important;
         height: auto;                                   
     }
-  
-/*
-    #error_page.app{
-      height:205px;
-      padding:75px 0px 75px 133px !important;  /* padding-top + padding-bottom + text area = image height */
-      margin:-137px 0px 0px -210px !important;
-    }
-*/
-
+    
     .aviso_x { 
         right: 0 !important;
         left: 50px;
         bottom: 25px;
         top: 0 !important;
+        padding-top: 40px !important;		/* nuevo */
+        padding-bottom: 0px !important;		/* nuevo */
     }
 
     .spinner:after, .spinner:before {
@@ -118,6 +90,7 @@ h1 {
     padding: 6px 2px;
     position: relative;
     letter-spacing: 2px;
+    border: 1px #717171 solid;		/* nuevo */
 }
   /*style error*/
 .event.error {
@@ -189,6 +162,7 @@ h1 {
 
 .nav_buttons p{
   font-size: 13px;
+  color: #000;		/* nuevo */
 }
 
 #index_page .nav_buttons{
@@ -197,6 +171,11 @@ h1 {
   left: 25%;*/
   color: #fff;
 }
+
+.credito{padding: 35px 20px;}
+
+.responsive{width: 100%;}
+img.responsive{opacity: .7;}
 
 /* ----- Stilo de cuadro de aviso 
 .aviso_x{
@@ -226,5 +205,6 @@ h1 {
   height: 80px;
   overflow: auto;
   margin-bottom: 10px;
-  border-bottom: 1px solid rgba(223,26,83,0.5);
+  /* border-bottom: 1px solid rgba(223,26,83,0.5); */
+  border-bottom: 1px solid rgba(74, 74, 74, 0.5);
 }
