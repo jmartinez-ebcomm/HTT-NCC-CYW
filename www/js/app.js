@@ -90,10 +90,12 @@ var app = {
 	buttonsComponent.setAttribute('class', 'nav_buttons hide');
 
 	var continueButton = document.getElementById("continue");
-	continueButton.setAttribute('class', 'btn btn-info hide');
+	//continueButton.setAttribute('class', 'btn btn-info hide');
+	continueButton.setAttribute('class', 'hide');
 
 	var backButton = document.getElementById("back");
-	backButton.setAttribute('class', 'btn btn-default hide');
+	//backButton.setAttribute('class', 'btn btn-default hide');
+	backButton.setAttribute('class', 'hide');
     },
     // Device ready Event
     receivedEvent: function(e) {
@@ -149,7 +151,8 @@ var app = {
                       // continue button
                       app.browserUrlRequest = app.targetUrl;
                       var continueButton = document.getElementById("continue");
-                      continueButton.setAttribute('class', 'btn btn-default');
+                      //continueButton.setAttribute('class', 'btn btn-default');
+                      continueButton.setAttribute('class', '');
                       continueButton.addEventListener('click', app.continueButton_onClick, false);
                       // index page: automatic redirect
                       console.log('app.startup[n]: Open request url: ' + app.browserUrlRequest);
@@ -435,14 +438,16 @@ var app = {
         var backButton = document.getElementById("back");
         if (!(app.browserUrlCurrent == 'undefined' || app.browserUrlCurrent == '') &&
           app.browserUrlCurrent != app.browserUrlRequest) {
-            backButton.setAttribute('class', 'btn btn-info');
+            //backButton.setAttribute('class', 'btn btn-info');
+            backButton.setAttribute('class', '');
             backButton.addEventListener('click', app.backButton_onClick, false);
         }
 
         // continue button
         var continueButton = document.getElementById("continue");
         if (!(app.browserUrlRequest == 'undefined' || app.browserUrlRequest == '')) {
-            continueButton.setAttribute('class', 'btn btn-default');
+            //continueButton.setAttribute('class', 'btn btn-default');
+            continueButton.setAttribute('class', '');
             continueButton.addEventListener('click', app.continueButton_onClick, false);
         }
     },

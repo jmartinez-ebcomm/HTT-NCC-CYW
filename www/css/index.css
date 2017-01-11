@@ -124,7 +124,7 @@ h1 {
 }
 /*desaparecer elemento*/
 .hide {
-    display: none;
+    display: none !important;
 }
  
 /* ----- Stilos de los botones ----- */
