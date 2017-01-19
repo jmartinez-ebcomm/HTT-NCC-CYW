@@ -4,11 +4,11 @@ var app = {
     appTitle: 'ClicByImpuls',
     targetUrl: 'http://173.203.97.7/~impulsha',
     allowNavigationUrls: [
-        '*://173.203.97.7/~impulsha/*',
-        '*://www.paypal.com/*',
-        '*://secure.na.tnspayments.com/*',
-        '*://banamex.na.tnspayments.com/*',
-        '*://banamex.dialectpayments.com/*'
+        '*://173.203.97.7/~impulsha*',
+        '*://www.paypal.com*',
+        '*://secure.na.tnspayments.com*',
+        '*://banamex.na.tnspayments.com*',
+        '*://banamex.dialectpayments.com*'
     ],
     fileExtensions: [
         // text files
