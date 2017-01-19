@@ -2,13 +2,13 @@
 var app = {
     // App Members
     appTitle: 'ClicByImpuls',
-    targetUrl: 'http://173.203.97.7/~impulsha',
+    targetUrl: 'http://clic.impuls.com.mx',
     allowNavigationUrls: [
-        '*://173.203.97.7/~impulsha*',
-        '*://www.paypal.com*',
-        '*://secure.na.tnspayments.com*',
-        '*://banamex.na.tnspayments.com*',
-        '*://banamex.dialectpayments.com*'
+        '*://clic.impuls.com.mx/*',
+        '*://www.paypal.com/*',
+        '*://secure.na.tnspayments.com/*',
+        '*://banamex.na.tnspayments.com/*',
+        '*://banamex.dialectpayments.com/*'
     ],
     fileExtensions: [
         // text files
