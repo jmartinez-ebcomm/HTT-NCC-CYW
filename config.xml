@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="mx.ebcomm.clicbyimpuls"
 	version="1.0.7"
-	android-versionCode="1001"
+	android-versionCode="1007"
 	ios-CFBundleVersion="1.1.7"
 	defaultlocale="es-419"
 	xmlns="http://www.w3.org/ns/widgets"
@@ -41,13 +41,16 @@
     <preference name="prerendered-icon" value="true" />
     <preference name="detect-data-types" value="true" />
     <preference name="exit-on-suspend" value="true" />
-    <preference name="deployment-target" value="6.0" />
+    <preference name="deployment-target" value="9.0" />
+    <gap:config-file platform="ios" parent="ITSAppUsesNonExemptEncryption" mode="add">
+       <false/>
+    </gap:config-file>
 
     <!-- Android only -->
     <preference name="android-build-tool" value="ant|gradle" />
-    <preference name="android-minSdkVersion" value="14" />
-    <!-- <preference name="android-maxSdkVersion" value="14" /> -->
-    <preference name="android-targetSdkVersion" value="14" />
+    <preference name="android-minSdkVersion" value="21" />
+    <!-- <preference name="android-maxSdkVersion" value="21" /> -->
+    <preference name="android-targetSdkVersion" value="21" />
     <preference name="android-installLocation" value="auto" />
     <!--
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
