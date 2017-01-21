@@ -106,6 +106,15 @@ var app = {
 
         var messageText = messagesComponent.children[0].children[0];
 
+	document.addEventListener("backbutton", function(e) {
+		if (document.getElementById('index_page') != undefined) {
+			e.preventDefault();
+			navigator.app.exitApp();
+		} else {
+			navigator.app.backHistory();
+		}
+	}, false);
+
         // set title again
         document.title = this.appTitle;
 

@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="mx.ebcomm.clicbyimpuls"
-	version="1.0.7"
-	android-versionCode="1007"
-	ios-CFBundleVersion="1.1.7"
+	version="1.0.8"
+	android-versionCode="1008"
+	ios-CFBundleVersion="1.1.8"
 	defaultlocale="es-419"
 	xmlns="http://www.w3.org/ns/widgets"
 	xmlns:cdv="http://cordova.apache.org/ns/1.0"
