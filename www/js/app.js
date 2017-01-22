@@ -159,14 +159,20 @@ var app = {
                   if (typeof(pageName) != 'undefined' && pageName != null) {
                       // continue button
                       app.browserUrlRequest = app.targetUrl;
-                      var continueButton = document.getElementById("continue");
-                      continueButton.setAttribute('class', '');
-                      continueButton.addEventListener('click', app.continueButton_onClick, false);
                       // index page: automatic redirect
                       console.log('app.startup[n]: Open request url: ' + app.browserUrlRequest);
 
 			setTimeout(function() {
 				app.clearScreen();
+
+				loadingComponent.setAttribute('class', 'loader hide');
+				statusBoxComponent.setAttribute('class', 'blink hide');
+
+				var continueButton = document.getElementById("continue");
+				continueButton.setAttribute('class', '');
+				continueButton.addEventListener('click', app.continueButton_onClick, false);
+				buttonsComponent.setAttribute('class', 'nav_buttons');
+
 				app.browser_open(app.browserUrlRequest);
 			}, 1000);
                   } else {
