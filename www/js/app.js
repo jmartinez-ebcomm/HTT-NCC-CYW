@@ -473,7 +473,7 @@ var app = {
     continueButton_onClick: function() {
         console.log('continue.click');
         app.browser_open(app.browserUrlRequest);
-	app.clearScreen();
+	//app.clearScreen();
     },
     // Gets query string parameters array
     getParameters: function() {
