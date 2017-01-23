@@ -32,15 +32,16 @@
     <preference name="OverrideUserAgent" value="Mozilla/5.0 /Cordova /PhoneGap /Android /iOS /Winphone" />
     -->
     <preference name="DisallowOverscroll" value="true"/>
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="3000" />
+    <!-- <preference name="SplashScreen" value="screen" /> -->
+    <preference name="SplashScreen" value="splash" />
+    <preference name="SplashScreenDelay" value="6000" />
     <preference name="AutoHideSplashScreen" value="true" />
 
     <!-- iOS only -->
     <preference name="target-device" value="universal" />
     <preference name="prerendered-icon" value="true" />
     <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="true" />
+    <preference name="exit-on-suspend" value="false" />
     <preference name="deployment-target" value="9.0" />
     <gap:config-file platform="ios" parent="ITSAppUsesNonExemptEncryption" mode="add">
        <false/>
@@ -55,6 +56,7 @@
     <!--
     <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     -->
+    <preference name="SplashMaintainAspectRatio" value="true" />
 
     <!-- ejemplo del chino -->
     <preference name="windows-target-version" value="8.1" />
@@ -63,10 +65,12 @@
     <!-- windows-arch: anycpu, arm, x86, and x64 -->
     <preference name="windows-arch" value="anycpu" />
 
+    <!--
     <feature name="SplashScreen" >
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
+    -->
 
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -87,46 +91,26 @@
 
     <platform name="android">
         <allow-intent href="market:*" />
-        <!-- icons
-        <icon src="res/android/icon-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
-        <icon src="res/android/icon-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
-        <icon src="res/android/icon-hdpi.png" gap:platform="android" gap:qualifier="hdpi"/>
-        <icon src="res/android/icon-xhdpi.png" gap:platform="android" gap:qualifier="xhdpi"/>
-        <icon src="res/android/icon-xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi"/>
-        <icon src="res/android/icon-xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi"/>
-	-->
+        <!-- icons -->
         <icon src="res/android/icon-ldpi.png" density="ldpi"/>
         <icon src="res/android/icon-mdpi.png" density="mdpi"/>
         <icon src="res/android/icon-hdpi.png" density="hdpi"/>
         <icon src="res/android/icon-xhdpi.png" density="xhdpi"/>
         <icon src="res/android/icon-xxhdpi.png" denity="xxhdpi"/>
         <icon src="res/android/icon-xxxhdpi.png" density="xxxhdpi"/>
-        <!-- splash
-        <splash src="res/android/splash-port-ldpi.png" gap:platform="android" gap:qualifier="port-ldpi"/>
-        <splash src="res/android/splash-land-ldpi.png" gap:platform="android" gap:qualifier="land-ldpi"/>
-        <splash src="res/android/splash-port-mdpi.png" gap:platform="android" gap:qualifier="port-mdpi"/>
-        <splash src="res/android/splash-land-mdpi.png" gap:platform="android" gap:qualifier="land-mdpi"/>
-        <splash src="res/android/splash-port-hdpi.png" gap:platform="android" gap:qualifier="port-hdpi"/>
-        <splash src="res/android/splash-land-hdpi.png" gap:platform="android" gap:qualifier="land-hdpi"/>
-        <splash src="res/android/splash-port-xhdpi.png" gap:platform="android" gap:qualifier="port-xhdpi"/>
-        <splash src="res/android/splash-land-xhdpi.png" gap:platform="android" gap:qualifier="land-xhdpi"/>
-        <splash src="res/android/splash-port-xxhdpi.png" gap:platform="android" gap:qualifier="port-xxhdpi"/>
-        <splash src="res/android/splash-land-xxhdpi.png" gap:platform="android" gap:qualifier="land-xxhdpi"/>
-        <splash src="res/android/splash-port-xxxhdpi.png" gap:platform="android" gap:qualifier="port-xxxhdpi"/>
-        <splash src="res/android/splash-land-xxxhdpi.png" gap:platform="android" gap:qualifier="land-xxxhdpi"/>
-	-->
-        <splash src="res/android/splash-port-ldpi.png" density="port-ldpi"/>
-        <splash src="res/android/splash-land-ldpi.png" density="land-ldpi"/>
-        <splash src="res/android/splash-port-mdpi.png" density="port-mdpi"/>
-        <splash src="res/android/splash-land-mdpi.png" density="land-mdpi"/>
-        <splash src="res/android/splash-port-hdpi.png" density="port-hdpi"/>
-        <splash src="res/android/splash-land-hdpi.png" density="land-hdpi"/>
-        <splash src="res/android/splash-port-xhdpi.png" density="port-xhdpi"/>
-        <splash src="res/android/splash-land-xhdpi.png" density="land-xhdpi"/>
-        <splash src="res/android/splash-port-xxhdpi.png" density="port-xxhdpi"/>
-        <splash src="res/android/splash-land-xxhdpi.png" density="land-xxhdpi"/>
-        <splash src="res/android/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
-        <splash src="res/android/splash-land-xxxhdpi.png" density="land-xxxhdpi"/>
+        <!-- splash -->
+        <splash src="res/android/splash-port-ldpi.png" qualifier="port-ldpi"/>
+        <splash src="res/android/splash-land-ldpi.png" qualifier="land-ldpi"/>
+        <splash src="res/android/splash-port-mdpi.png" qualifier="port-mdpi"/>
+        <splash src="res/android/splash-land-mdpi.png" qualifier="land-mdpi"/>
+        <splash src="res/android/splash-port-hdpi.png" qualifier="port-hdpi"/>
+        <splash src="res/android/splash-land-hdpi.png" qualifier="land-hdpi"/>
+        <splash src="res/android/splash-port-xhdpi.png" qualifier="port-xhdpi"/>
+        <splash src="res/android/splash-land-xhdpi.png" qualifier="land-xhdpi"/>
+        <splash src="res/android/splash-port-xxhdpi.png" qualifier="port-xxhdpi"/>
+        <splash src="res/android/splash-land-xxhdpi.png" qualifier="land-xxhdpi"/>
+        <splash src="res/android/splash-port-xxxhdpi.png" qualifier="port-xxxhdpi"/>
+        <splash src="res/android/splash-land-xxxhdpi.png" qualifier="land-xxxhdpi"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -187,17 +171,21 @@
         <splash src="res/ios/Default-568h-Portrait@2x~iphone.png" width="640" height="1136"/>
         <splash src="res/ios/Default-568h-Landscape@2x~iphone.png" width="1136" height="640"/>
 
-	      <!-- Splash: iPhone 6 (2x) -->
+	      <!-- Splash: iPhone 6 (2x)
         <splash src="res/ios/Default-667h-Portrait.png" width="750" height="1334"/>
-        <splash src="res/ios/Default-667h-Landscape.png" width="1334" height="750"/>
+        <splash src="res/ios/Default-667h-Landscape.png" width="1334" height="750"/> -->
+        <splash src="res/ios/Default-667h-Portrait@2x~iphone.png" width="750" height="1334"/>
+        <splash src="res/ios/Default-667h-Landscape@2x~iphone.png" width="1334" height="750"/>
 
         <!-- Splash: iPhone 6 Plus (3x) -->
         <splash src="res/ios/Default-Portrait@3x~iphone.png" width="1080" height="1920"/>
         <splash src="res/ios/Default-Landscape@3x~iphone.png" width="1920" height="1080"/>
 
-        <!-- Splash: Retina HD 5.5 (iPhone 6 Plus) -->
+        <!-- Splash: Retina HD 5.5 (iPhone 6 Plus)
         <splash src="res/ios/Default-736h-Portrait.png" width="1242" height="2208"/>
-        <splash src="res/ios/Default-736h-Landscape.png" width="2208" height="1242"/>
+        <splash src="res/ios/Default-736h-Landscape.png" width="2208" height="1242"/> -->
+        <splash src="res/ios/Default-736h-Portrait@3x.png" width="1242" height="2208"/>
+        <splash src="res/ios/Default-736h-Landscape@3x.png" width="2208" height="1242"/>
 
     </platform>
     <platform name="windows">
