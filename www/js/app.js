@@ -44,6 +44,11 @@ var app = {
         this.browserUrlRequest = decodeURIComponent(parameters['request']);
         this.externalRequest = decodeURIComponent(parameters['external']);
 
+	// jmartinez: twitter ^ = %5E
+	this.browserUrlCurrent = this.browserUrlCurrent.replace('^', '%5E');
+	this.browserUrlRequest = this.browserUrlRequest.replace('^', '%5E');
+	this.externalRequest = this.externalRequest.replace('^', '%5E');
+
         if (this.externalRequest == 'undefined' || this.externalRequest == '' || this.externalRequest == 'false') {
             this.externalRequest = false;
         } else {
