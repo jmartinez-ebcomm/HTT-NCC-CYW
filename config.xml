@@ -86,8 +86,10 @@
     <allow-navigation href="*://banamex.dialectpayments.com/*" />
 
     <content src="index.html" />
+    <!--
     <icon src="res/android/icon-ldpi.png" />
     <splash src="res/android/splash-port-ldpi.png" />
+    -->
 
     <platform name="android">
         <allow-intent href="market:*" />

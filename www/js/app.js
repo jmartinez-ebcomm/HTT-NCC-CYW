@@ -40,9 +40,14 @@ var app = {
 
         // members
         var parameters = this.getParameters();
+	/*
         this.browserUrlCurrent = decodeURIComponent(parameters['current']);
         this.browserUrlRequest = decodeURIComponent(parameters['request']);
         this.externalRequest = decodeURIComponent(parameters['external']);
+	*/
+        this.browserUrlCurrent = parameters['current'];
+        this.browserUrlRequest = parameters['request'];
+        this.externalRequest = parameters['external'];
 
 	// jmartinez: twitter ^ = %5E
 	this.browserUrlCurrent = this.browserUrlCurrent.replace('^', '%5E');
