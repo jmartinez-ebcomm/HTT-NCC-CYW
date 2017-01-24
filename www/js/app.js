@@ -50,9 +50,11 @@ var app = {
         this.externalRequest = parameters['external'];
 
 	// jmartinez: twitter ^ = %5E
-	this.browserUrlCurrent = this.browserUrlCurrent.replace('^', '%5E');
-	this.browserUrlRequest = this.browserUrlRequest.replace('^', '%5E');
-	this.externalRequest = this.externalRequest.replace('^', '%5E');
+	if (this.browserUrlCurrent !== undefined && this.browserUrlCurrent != null && this.browserUrlCurrent != '')
+		this.browserUrlCurrent = this.browserUrlCurrent.replace('^', '%5E');
+
+	if (this.browserUrlRequest !== undefined && this.browserUrlRequest != null && this.browserUrlRequest != '')
+		this.browserUrlRequest = this.browserUrlRequest.replace('^', '%5E');
 
         if (this.externalRequest == 'undefined' || this.externalRequest == '' || this.externalRequest == 'false') {
             this.externalRequest = false;
