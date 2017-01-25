@@ -77,6 +77,8 @@ var app = {
     },
     //
     onDeviceReady: function() {
+        console.log('current=' + app.browserUrlCurrent);
+        console.log('request=' + app.browserUrlRequest);
         app.receivedEvent('deviceready');
     },
     clearScreen: function() {
@@ -463,24 +465,26 @@ var app = {
           app.browserUrlCurrent != app.browserUrlRequest) {
             backButton.setAttribute('class', '');
             backButton.addEventListener('click', app.backButton_onClick, false);
-        }
+            console.log('errorPageEvent: current=' + app.browserUrlCurrent);
+        } else console.log('errorPageEvent: current is undefined or equals request');
 
         // continue button
         var continueButton = document.getElementById("continue");
         if (!(app.browserUrlRequest == 'undefined' || app.browserUrlRequest == '')) {
             continueButton.setAttribute('class', '');
             continueButton.addEventListener('click', app.continueButton_onClick, false);
-        }
+            console.log('errorPageEvent: request=' + app.browserUrlRequest);
+        } else console.log('errorPageEvent: request is undefined');
     },
     // Event back.click
     backButton_onClick: function() {
-        console.log('back.click');
+        console.log('back.click: ' + app.browserUrlCurrent);
         app.browser_open(app.browserUrlCurrent);
 	app.clearScreen();
     },
     // Event continue.click
     continueButton_onClick: function() {
-        console.log('continue.click');
+        console.log('continue.click: ' + app.browserUrlRequest);
         app.browser_open(app.browserUrlRequest);
 	//app.clearScreen();
     },
