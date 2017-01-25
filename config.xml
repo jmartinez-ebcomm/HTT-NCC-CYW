@@ -32,8 +32,6 @@
     <preference name="OverrideUserAgent" value="Mozilla/5.0 /Cordova /PhoneGap /Android /iOS /Winphone" />
     -->
     <preference name="DisallowOverscroll" value="true"/>
-    <!-- <preference name="SplashScreen" value="screen" /> -->
-    <preference name="SplashScreen" value="splash" />
     <preference name="SplashScreenDelay" value="6000" />
     <preference name="AutoHideSplashScreen" value="true" />
 
@@ -86,13 +84,12 @@
     <allow-navigation href="*://banamex.dialectpayments.com/*" />
 
     <content src="index.html" />
-    <!--
-    <icon src="res/android/icon-ldpi.png" />
-    <splash src="res/android/splash-port-ldpi.png" />
-    -->
 
     <platform name="android">
         <allow-intent href="market:*" />
+
+        <preference name="SplashScreen" value="splash" />
+
         <!-- icons -->
         <icon src="res/android/icon-ldpi.png" density="ldpi"/>
         <icon src="res/android/icon-mdpi.png" density="mdpi"/>
@@ -117,6 +114,8 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+	<preference name="SplashScreen" value="screen" />
 
         <!-- iOS 9.0+ -->
         <icon src="res/ios/icon-small@3x.png" width="87" height="87" />
