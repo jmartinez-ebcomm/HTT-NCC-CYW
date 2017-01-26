@@ -182,7 +182,7 @@ h1 {
 }
     /* focus: botones*/
 .nav_buttons #back:focus, .nav_buttons #continue:focus {
-    opacity: 0.6;
+    /* opacity: 0.6; Provoca confusion al regresar despues de la segunda vez la pantalla en Android */
     outline: none;
 }
 
