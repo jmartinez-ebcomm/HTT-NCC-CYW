@@ -77,7 +77,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
 
-    <allow-navigation href="*://173.203.97.7/~impulsha/*" />
+    <allow-navigation href="*://clic.impuls.com.mx/*" />
     <allow-navigation href="*://www.paypal.com/*" />
     <allow-navigation href="*://secure.na.tnspayments.com/*" />
     <allow-navigation href="*://banamex.na.tnspayments.com/*" />
