@@ -2,9 +2,9 @@
 var app = {
     // App Members
     appTitle: 'ClicByImpuls',
-    targetUrl: 'http://clic.impuls.com.mx',
+    targetUrl: 'http://173.203.97.7/~impulsha',
     allowNavigationUrls: [
-        '*://clic.impuls.com.mx/*',
+        '*://173.203.97.7/~impulsha/*',
         '*://www.paypal.com/*',
         '*://secure.na.tnspayments.com/*',
         '*://banamex.na.tnspayments.com/*',
